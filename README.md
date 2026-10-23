@@ -34,6 +34,19 @@ Learning options:
    performance; sparsification helps pattern separation but not
    smooth function approximation under a global readout.
 
+Also included:
+- `embodied_arm.py` — two-link arm reaching with a cerebellar inverse
+  model (Kawato feedback-error learning): payload adaptation and a
+  washout aftereffect; frozen-cerebellum lesion control never adapts.
+- `humanoid_balance.py` + `humanoid2d.xml` — a planar (sagittal) MuJoCo
+  humanoid learning push recovery. Predictive feedback-error learning
+  (state paired with feedback torque 120 ms ahead, importance-weighted)
+  cuts COM excursion by ~37% at the trained force and raises the fall
+  threshold: after training it survives 190 N pushes that topple the
+  no-cerebellum control 3/3 times. (Full 3-D Gym humanoid collapses
+  under naive PD — measured — hence the planar model, the standard
+  simplification in biped-balance research.)
+
 ## Quick start
 
 ```bash
