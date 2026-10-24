@@ -47,6 +47,15 @@ Also included:
   under naive PD — measured — hence the planar model, the standard
   simplification in biped-balance research.)
 
+- `granule_scaling.py` — granule-cell scaling law (sparse CSR layer,
+  1k → 1M cells). Function approximation improves 0.070 → 0.015 then
+  saturates hard beyond ~100k cells: the ceiling is set by the fixed
+  mossy front-end and readout, not by granule count. Classification on
+  mean-separable Gaussian classes stays *below* a raw-input linear
+  readout even at 1M cells — expansion pays off for highly overlapping /
+  nonlinear class geometry, not everywhere. Cost grows ~linearly while
+  gains flatten: the cerebellar scaling bargain in one plot.
+
 ## Quick start
 
 ```bash
